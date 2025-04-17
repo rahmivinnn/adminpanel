@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { useDropzone } from "react-dropzone"
+import { useDropzone } from "@/components/mock-dropzone"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -62,7 +62,7 @@ export function SleepStoryUploadForm({ onClose }: SleepStoryUploadFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     const incompleteFiles = files.filter(f => !f.title || !f.description || !f.duration || !f.category)
     if (incompleteFiles.length > 0) {
       setError("Please fill in all fields for each file")
@@ -73,13 +73,13 @@ export function SleepStoryUploadForm({ onClose }: SleepStoryUploadFormProps) {
       // Simulate uploading files one by one
       for (const file of files) {
         handleUpdateFile(file.id, { status: 'uploading' })
-        
+
         // Simulate progress
         for (let progress = 0; progress <= 100; progress += 10) {
           await new Promise(resolve => setTimeout(resolve, 100))
           handleUpdateFile(file.id, { uploadProgress: progress })
         }
-        
+
         handleUpdateFile(file.id, { status: 'completed' })
       }
 
@@ -205,4 +205,4 @@ export function SleepStoryUploadForm({ onClose }: SleepStoryUploadFormProps) {
       </div>
     </form>
   )
-} 
+}

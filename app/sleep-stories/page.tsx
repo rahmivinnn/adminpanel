@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { Search, Plus, Edit, Trash, ExternalLink, Filter } from "lucide-react"
+import { Search, Plus, Edit, Trash, ExternalLink, Filter, Bell } from "lucide-react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -10,7 +10,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogT
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Sidebar } from "@/components/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Bell } from "lucide-react"
 import { formatDate } from "@/lib/utils"
 import { useToast } from "@/components/ui/toast-provider"
 import { NotificationCenter } from "@/components/notification-center"
